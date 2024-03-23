@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+}
+.sidebar{
+    flex: 1;
+    padding: 20px;
+    color: var(--text);
+    min-height: 100vh;
+    background-color: var(--bgSoft);
+}
+.content{
+    flex: 4;
+    padding: 20px;
+}
+.navbar{
+    padding: 10px;
+    background-color: var(--text);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.main{
+    padding: 20px;
+}

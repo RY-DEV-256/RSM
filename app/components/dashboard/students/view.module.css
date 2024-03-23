@@ -1,0 +1,87 @@
+.container{
+    background-color: var(--text);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+
+}
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.addButton{
+    padding: 10px;
+    outline: none;
+    border: none;
+    color: var(--text);
+    background-color: blue;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    padding: 20px;
+    text-align: left;
+}
+.table td{
+    padding: 20px;
+    border: 1px solid #dddddd;
+}
+.table th{
+    padding: 10px;
+    border: 1px solid #dddddd;
+}
+.table tr:nth-child(even){
+background-color: #dddddd;
+}
+.buttons{
+    display: flex;
+    gap: 10px;
+}
+.button{
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--text);
+    border: none;
+    cursor: pointer;
+}
+.view{
+    background-color: teal;
+}
+.delete{
+    background-color: crimson;
+}
+
+/* form for deletion  */
+.modalform{
+    padding: 10px;
+}
+.modalform h3{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.modalform p{
+    color: red;
+    margin-bottom: 20px;
+}
+.modalbuttons{
+    display: flex;
+    gap: 20px;
+}
+.modalbuttons button{
+    color: var(--text);
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.deletebtn{
+    background-color: crimson;
+
+}
+.cancelbtn{
+    background-color: grey;
+}
