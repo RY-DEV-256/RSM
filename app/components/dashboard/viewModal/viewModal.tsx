@@ -1,14 +1,14 @@
 import React from 'react';
 import { MdClose } from 'react-icons/md';
-import styles from './editModal.module.css'
+import styles from './viewModal.module.css'
 interface ModalProps {
-  isEditModalOpen: boolean;
+  isViewModalOpen: boolean;
   onClose: () => void;
   children: React.ReactNode;
 }
 
-const EditModal: React.FC<ModalProps> = ({ isEditModalOpen, onClose, children }) => {
-  if (!isEditModalOpen) return null;
+const ViewModal: React.FC<ModalProps> = ({ isViewModalOpen, onClose, children }) => {
+  if (!isViewModalOpen) return null;
 
   return (
     <div className={styles.modaloverlay}>
@@ -25,4 +25,4 @@ const EditModal: React.FC<ModalProps> = ({ isEditModalOpen, onClose, children })
   );
 };
 
-export default EditModal;
+export default ViewModal;

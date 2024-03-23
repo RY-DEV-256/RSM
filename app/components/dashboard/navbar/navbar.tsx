@@ -17,10 +17,10 @@ const Navbar = () => {
       </div>
       <div className={styles.icons}>
         <div className={styles.notification}>
-        <MdNotifications  className={styles.icon}/>
+        <MdNotifications  className={styles.icon} />
         <span className={styles.number}>1</span>
         </div>
-        <MdOutlinePowerSettingsNew className={styles.icon}/>
+        <MdOutlinePowerSettingsNew className={`${styles.icon} ${styles.logout}`}/>
       </div>
     </div>
   )

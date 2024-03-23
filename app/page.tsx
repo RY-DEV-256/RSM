@@ -3,6 +3,6 @@ import styles from "./page.module.css";
 
 export default function Home() {
   return (
-   <p>Hello world</p>
+   <p>Welcome to RMS Admin Login</p>
   );
 }

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Pagination from '../pagination/pagination';
 import ProgramModal from './modal/modal';
 import Modal from '../deleteModal/deleteModal';
+import EditModal from '../editModal/editModal';
 const ViewProgram = () => {
   const [show, setShow] = useState(false);
   const onShowModal = () => setShow(true);
@@ -16,6 +17,14 @@ const ViewProgram = () => {
 
    const openModal = () => setIsModalOpen(true);
    const closeModal = () => setIsModalOpen(false);
+
+   
+  //===================== Edit modal ==================//
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+
+  const openEditModal = () => setIsEditModalOpen(true);
+  const closeEditModal = () => setIsEditModalOpen(false);
+
   return (
     <div>
       <div className={styles.container}>
@@ -41,8 +50,8 @@ const ViewProgram = () => {
                 <td></td>
                 <td>
                   <div className={styles.buttons}>
-                    <Link href="/dashboard/programs/edit">
-                      <button className={`${styles.button} ${styles.edit}`}>
+                    <Link href="#">
+                      <button className={`${styles.button} ${styles.edit}`} onClick={openEditModal}>
                         Edit
                       </button>
                     </Link>
@@ -68,6 +77,16 @@ const ViewProgram = () => {
           </div>
         </form>
         </Modal>
+        <EditModal isEditModalOpen={isEditModalOpen} onClose={closeEditModal}>
+        <form action="" method="post" className={styles.form}>
+          <h3>Edit Program</h3>
+    <label htmlFor="program_name">Program Name</label>
+    <input type="text" name="program_name" id="program_name" placeholder="Enter Program Name.." required/>
+    <label htmlFor="program_code">Program Code</label>
+    <input type="text" name="program_code" id="program_code" placeholder="Enter Program Code.." required/>
+    <button type="submit">Update</button>
+    </form>
+        </EditModal>
       </div>
     </div>
   )

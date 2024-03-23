@@ -41,7 +41,7 @@ const ViewYear = () => {
                 <td></td>
                 <td>
                   <div className={styles.buttons}>
-                    <Link href="/dashboard/year/edit">
+                    <Link href="#">
                       <button className={`${styles.button} ${styles.edit}`}>
                         Edit
                       </button>

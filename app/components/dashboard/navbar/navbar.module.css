@@ -19,6 +19,9 @@ position: relative;
     width: 27px;
     height: 27px;
 }
+.logout{
+    color: red;
+}
 .number{
     background-color: red;
     color: white;

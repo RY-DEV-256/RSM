@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Pagination from '../pagination/pagination';
 import FacultyModal from './modal/modal';
 import Modal from '../deleteModal/deleteModal';
+import EditModal from '../editModal/editModal';
 const ViewFaculty = () => {
 //================ Add modal ==========================//
   const [show, setShow] = useState(false);
@@ -17,6 +18,12 @@ const ViewFaculty = () => {
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+
+//===================== Edit modal ==================//
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+
+  const openEditModal = () => setIsEditModalOpen(true);
+  const closeEditModal = () => setIsEditModalOpen(false);
 
   return (
     <div>
@@ -41,8 +48,8 @@ const ViewFaculty = () => {
                 <td></td>
                 <td>
                   <div className={styles.buttons}>
-                    <Link href="/dashboard/faculties/edit">
-                      <button className={`${styles.button} ${styles.edit}`}>
+                    <Link href="#">
+                      <button className={`${styles.button} ${styles.edit}`} onClick={openEditModal}>
                         Edit
                       </button>
                     </Link>
@@ -70,6 +77,14 @@ const ViewFaculty = () => {
           </div>
         </form>
         </Modal>
+        <EditModal isEditModalOpen={isEditModalOpen} onClose={closeEditModal}>
+        <form action="" method="post" className={styles.form}>
+          <h3>Edit Faculty</h3>
+    <label htmlFor="faculty_name">Faculty Name</label>
+    <input type="text" name="faculty_name" id="faculty_name" value="Computing and Information Sciences" required/>
+    <button type="submit">Update</button>
+    </form>
+        </EditModal>
     </div>
   )
 }

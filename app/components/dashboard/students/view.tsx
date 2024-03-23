@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Search from '../search/search';
 import styles from './view.module.css'
 import Modal from '../deleteModal/deleteModal';
+import ViewModal from '../viewModal/viewModal';
 
 const ViewStudent = () => {
   
@@ -13,6 +14,12 @@ const ViewStudent = () => {
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+  //===================== View modal ==================//
+  const [isViewModalOpen, setIsViewModalOpen] = useState(false);
+
+  const openViewModal = () => setIsViewModalOpen(true);
+  const closeViewModal = () => setIsViewModalOpen(false);
+
   return (
     <div>
       <div className={styles.container}>
@@ -40,8 +47,8 @@ const ViewStudent = () => {
                 <td></td>
                 <td>
                   <div className={styles.buttons}>
-                    <Link href="/dashboard/students/view">
-                      <button className={`${styles.button} ${styles.view}`}>
+                    <Link href="#">
+                      <button className={`${styles.button} ${styles.view}`} onClick={openViewModal}>
                         View
                       </button>
                     </Link>
@@ -66,6 +73,21 @@ const ViewStudent = () => {
           </div>
         </form>
         </Modal>
+        <ViewModal isViewModalOpen={isViewModalOpen} onClose={closeViewModal}>
+          <div className={styles.studentDetails}>
+          <h3>Student Details</h3>
+          <span><h4>Student Name:</h4></span>
+          <span><h4>Student Reg.no:</h4></span>
+          <span><h4>Student Email:</h4></span>
+          <span><h4>Student No.:</h4></span>
+          <span><h4>Phone No:</h4></span>
+          <span><h4>Program:</h4></span>
+          <span><h4>Faculty:</h4></span>
+          <span><h4>Department:</h4></span>
+          <span><h4>Year:</h4></span>
+          </div>
+         
+        </ViewModal>
       </div>
     </div>
   )
